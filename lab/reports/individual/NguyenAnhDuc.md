@@ -119,5 +119,5 @@ Tôi sẽ upgrade `_estimate_confidence()` thành **LLM-as-Judge**: sau khi synt
 
 ---
 
-*File lưu tại: `reports/individual/nguyen_anh_duc.md`*
+*File lưu tại: `reports/individual/NguyenAnhDuc.md`*
 *Commit sau 18:00 được phép theo SCORING.md*
