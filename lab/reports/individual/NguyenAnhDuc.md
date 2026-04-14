@@ -1,9 +1,8 @@
 # Báo Cáo Cá Nhân — Lab Day 09: Multi-Agent Orchestration
 
-**Họ và tên:** Nguyễn Anh Đức
+**Họ và tên:** Nguyễn Anh Đức (2A202600387)
 **Vai trò trong nhóm:** Documentation & Synthesis Owner (M6)
-**Ngày nộp:** 2026-04-14
-**Độ dài:** ~650 từ
+**Ngày nộp:** 14/04/2026
 
 ---
 
