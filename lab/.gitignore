@@ -1,0 +1,25 @@
+# Python bytecode — auto-generated, không commit
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# ChromaDB local database — re-index trên mỗi máy, không commit
+chroma_db/
+
+# Environment variables — chứa API keys, KHÔNG BAO GIỜ commit
+.env
+
+# Artifacts build output (traces và reports lớn — optional)
+# Uncomment nếu muốn bỏ artifacts khỏi git:
+# artifacts/
+
+# OS files
+.DS_Store
+Thumbs.db

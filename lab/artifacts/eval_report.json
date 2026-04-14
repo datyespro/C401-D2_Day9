@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-04-14T17:10:39.246777",
+  "day08_single_agent": {
+    "architecture": "Single RAG pipeline (retrieve → generate)",
+    "avg_confidence": 0.0,
+    "avg_latency_ms": 0,
+    "routing_visibility": "Không có — một pipeline đơn, không rõ bước nào sai",
+    "worker_testability": "Không thể test từng bước độc lập",
+    "mcp_support": "Không có",
+    "debuggability": "Thấp — lỗi không rõ ở retrieval hay generation"
+  },
+  "day09_multi_agent": {
+    "architecture": "Supervisor-Worker Multi-Agent Graph",
+    "avg_confidence": 0.139,
+    "avg_latency_ms": 5350,
+    "routing_accuracy_pct": 100.0,
+    "source_hit_rate_pct": 100.0,
+    "routing_distribution": {
+      "retrieval_worker": "48/84 (57%)",
+      "policy_tool_worker": "36/84 (42%)"
+    },
+    "mcp_usage_rate": "18/84 (21%)",
+    "hitl_rate": "6/84 (7%)",
+    "routing_visibility": "Có — mỗi câu có route_reason và worker_io_logs",
+    "worker_testability": "Có — mỗi worker test được độc lập",
+    "mcp_support": "Có — gọi external capability qua MCP interface",
+    "debuggability": "Cao — trace từng bước, Routing Error Tree"
+  },
+  "deltas": {
+    "latency_delta": "N/A (baseline chưa có)",
+    "confidence_delta": "N/A (baseline chưa có)"
+  },
+  "qualitative_analysis": {
+    "routing_visibility": "[+] Day 09 co route_reason -> de debug hon Day 08",
+    "debuggability": "[+] Multi-agent: test tung worker doc lap. Single-agent: khong the.",
+    "mcp_extensibility": "[+] Day 09 extend capability qua MCP khong can sua core pipeline.",
+    "latency_tradeoff": "[!] Multi-agent co overhead do goi nhieu workers -- can danh doi vs accuracy.",
+    "complexity": "[!] Multi-agent phuc tap hon Single-agent -- can routing logic chinh xac."
+  },
+  "accuracy_breakdown": {
+    "routing_accuracy": {
+      "correct": 15,
+      "total_evaluated": 15,
+      "accuracy_pct": 100.0
+    },
+    "source_hit_rate": {
+      "hit": 14,
+      "total_evaluated": 14,
+      "hit_pct": 100.0
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 5,
+        "route_correct": 5,
+        "accuracy_pct": 100.0
+      },
+      "medium": {
+        "total": 6,
+        "route_correct": 6,
+        "accuracy_pct": 100.0
+      },
+      "hard": {
+        "total": 4,
+        "route_correct": 4,
+        "accuracy_pct": 100.0
+      }
+    },
+    "routing_mistakes": []
+  },
+  "accuracy_report": {
+    "routing_accuracy": {
+      "correct": 15,
+      "total_evaluated": 15,
+      "accuracy_pct": 100.0
+    },
+    "source_hit_rate": {
+      "hit": 14,
+      "total_evaluated": 14,
+      "hit_pct": 100.0
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 5,
+        "route_correct": 5,
+        "accuracy_pct": 100.0
+      },
+      "medium": {
+        "total": 6,
+        "route_correct": 6,
+        "accuracy_pct": 100.0
+      },
+      "hard": {
+        "total": 4,
+        "route_correct": 4,
+        "accuracy_pct": 100.0
+      }
+    },
+    "routing_mistakes": []
+  }
+}

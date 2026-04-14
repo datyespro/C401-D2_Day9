@@ -31,25 +31,32 @@ DEFAULT_TOP_K = 3
 def _get_embedding_fn():
     """
     Trả về embedding function.
-    TODO Sprint 1: Implement dùng OpenAI hoặc Sentence Transformers.
+    Ưu tiên: OpenAI (nếu có OPENAI_API_KEY) → SentenceTransformers → random fallback.
     """
-    # # Option A: Sentence Transformers (offline, không cần API key)
-    # try:
-    #     from sentence_transformers import SentenceTransformer
-    #     model = SentenceTransformer("all-MiniLM-L6-v2")
-    #     def embed(text: str) -> list:
-    #         return model.encode([text])[0].tolist()
-    #     return embed
-    # except ImportError:
-    #     pass
+    from dotenv import load_dotenv
+    load_dotenv()
 
-    # Option B: OpenAI (cần API key)
+    # Option A: OpenAI (ưu tiên nếu có API key)
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if openai_api_key:
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=openai_api_key)
+            def embed(text: str) -> list:
+                resp = client.embeddings.create(input=text, model="text-embedding-3-small")
+                return resp.data[0].embedding
+            print("✅ Using OpenAI embeddings (text-embedding-3-small)")
+            return embed
+        except ImportError:
+            print("⚠️  openai package not found, falling back...")
+
+    # Option B: Sentence Transformers (offline, không cần API key)
     try:
-        from openai import OpenAI
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer("all-MiniLM-L6-v2")
         def embed(text: str) -> list:
-            resp = client.embeddings.create(input=text, model="text-embedding-3-small")
-            return resp.data[0].embedding
+            return model.encode([text])[0].tolist()
+        print("✅ Using SentenceTransformer embeddings (all-MiniLM-L6-v2)")
         return embed
     except ImportError:
         pass
@@ -58,7 +65,7 @@ def _get_embedding_fn():
     import random
     def embed(text: str) -> list:
         return [random.random() for _ in range(384)]
-    print("⚠️  WARNING: Using random embeddings (test only). Install sentence-transformers.")
+    print("⚠️  WARNING: Using random embeddings (test only). Set OPENAI_API_KEY in .env.")
     return embed
 
 
