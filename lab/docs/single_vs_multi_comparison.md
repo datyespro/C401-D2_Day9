@@ -1,7 +1,7 @@
 # Single Agent vs Multi-Agent Comparison — Lab Day 09
 
 **Nhóm:** C401-D2
-**Ngày:** 2026-04-14
+**Ngày:** 14/04/2026
 
 > Số liệu Day 09 lấy từ `artifacts/eval_report.json` (chạy 15 test questions).
 > Số liệu Day 08 là N/A — nhóm không có baseline chạy được từ Day 08 lab.

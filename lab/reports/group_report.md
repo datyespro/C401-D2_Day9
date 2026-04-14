@@ -12,7 +12,7 @@
 | Đậu Văn Quyền | Evaluate & Trace Owner | Sprint 4 |
 | Nguyễn Anh Đức | Documentation & Synthesis Owner | Sprint 2 + 4 |
 
-**Ngày nộp:** 2026-04-14
+**Ngày nộp:** 14/04/2026
 **Repo:** [URL GitHub của nhóm]
 **Độ dài:** ~800 từ
 
