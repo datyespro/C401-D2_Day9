@@ -470,12 +470,25 @@ def run_graph(task: str) -> AgentState:
     return result
 
 
-def save_trace(state: AgentState, output_dir: str = "./artifacts/traces") -> str:
-    """Lưu trace ra file JSON."""
+def save_trace(state: AgentState, output_dir: str = "./artifacts/traces", question_id: str = "") -> str:
+    """
+    Lưu trace ra file JSON.
+    Args:
+        state: AgentState sau khi chạy pipeline
+        output_dir: thư mục lưu trace
+        question_id: nếu có, dùng làm prefix filename để tránh collision
+    """
     os.makedirs(output_dir, exist_ok=True)
-    filename = f"{output_dir}/{state['run_id']}.json"
+    # Dùng question_id làm prefix để tránh filename collision khi chạy nhiều câu
+    if question_id:
+        filename = f"{output_dir}/{question_id}_{state['run_id']}.json"
+    else:
+        filename = f"{output_dir}/{state['run_id']}.json"
+    # Thêm timestamp (bắt buộc theo README Sprint 4 trace format)
+    trace_data = dict(state)
+    trace_data["timestamp"] = datetime.now().isoformat()
     with open(filename, "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+        json.dump(trace_data, f, ensure_ascii=False, indent=2)
     return filename
 
 
