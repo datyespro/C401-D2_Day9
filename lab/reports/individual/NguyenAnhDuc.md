@@ -1,9 +1,8 @@
 # Báo Cáo Cá Nhân — Lab Day 09: Multi-Agent Orchestration
 
-**Họ và tên:** Nguyễn Anh Đức
+**Họ và tên:** Nguyễn Anh Đức (2A202600387)
 **Vai trò trong nhóm:** Documentation & Synthesis Owner (M6)
-**Ngày nộp:** 2026-04-14
-**Độ dài:** ~650 từ
+**Ngày nộp:** 14/04/2026
 
 ---
 
@@ -120,5 +119,5 @@ Tôi sẽ upgrade `_estimate_confidence()` thành **LLM-as-Judge**: sau khi synt
 
 ---
 
-*File lưu tại: `reports/individual/nguyen_anh_duc.md`*
+*File lưu tại: `reports/individual/NguyenAnhDuc.md`*
 *Commit sau 18:00 được phép theo SCORING.md*

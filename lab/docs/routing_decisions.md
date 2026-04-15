@@ -1,7 +1,7 @@
 # Routing Decisions Log — Lab Day 09
 
 **Nhóm:** C401-D2
-**Ngày:** 2026-04-14
+**Ngày:** 14/04/2026
 
 > Các quyết định routing dưới đây được trích trực tiếp từ `artifacts/traces/*.json` — không phải giả định.
 
